@@ -1,0 +1,17 @@
+#modified 14/05/15
+user-agent: *
+disallow: */autoloader
+disallow: */holding
+disallow: */previews
+disallow: */thumbs
+disallow: */uploads
+disallow: /analytics
+disallow: /clients
+
+#allow: /public/public_images/*.jpg$
+
+sitemap: http://johnwalton.photography/sitemap.xml
+#sitemap: http://johnwalton.photography/sitemap_mobile.xml
+
+#HTMLy blog
+disallow: /1000words

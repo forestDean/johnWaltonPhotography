@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{ overflow: scroll}
+body {
+	font: 100%/1.4  Helvetica, Arial Verdana, sans-serif;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	color: #666;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #666;
+	text-decoration: none; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #666;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	 color: #333;
+	 text-decoration: none;
+}
+
+/* ~~ this fixed width container surrounds all other elements ~~ */
+.container {
+	width: 910px; height: auto;
+	background: #fff;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+#main{width: 100%; height:520px; margin-top:20px;background-color:#fff}
+
+
+/* ~~ This is the layout information. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+.content {
+
+	padding: 10px 0;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+/*============================================================================================================================================================*/
+
+
+#galleryHome{position:relative; float:left; width: 450px; height:450px; margin-top:0;}
+#slideshowHome{}
+.slideShowHome{margin:0; padding: 0; width: 450px; height: 450px; background-color:#fff}
+.slideDivHome{ position:absolute; width: 450px; height: 450px; text-align:left; z-index:1}
+.js #slideshowHome div{display: none;} /*prevent flash of unstyled content - note invisible class added to HTML tag*/
+#slideshowHome div.first{ display: block } /*prevent flash of unstyled content*/
+div#squareOverlay{position: absolute; width:450px; height:450px; background-image:url(../images/overlays/squareOverlay.jpg); z-index:200; opacity: 0; filter: alpha(opacity=0);  /*For IE8 and earlier */}
+div#fullOverlay{position: absolute; width:910px; height:450px; background-image:url(../images/overlays/squareOverlay.jpg); z-index:200; opacity: 0; filter: alpha(opacity=0);  /*For IE8 and earlier */}
+
+#contentMenu{ position:relative; float:right;width: 450px; height:450px;margin-top:0;}
+#contentMenu ul{list-style: none; margin: 0; padding: 0; /*reset*/background-color:#fff; height:auto; padding:100px 0 0 160px;}
+#contentMenu li{ height:40px}
+
+#gallery{width: 100%; height:450px; margin-top:0;}
+.slideShow { margin:0; padding: 0; width: 910px; height: 450px; background-color:#fff }
+.slideDiv{width: 910px; height: 450px; text-align:center}
+.slideImage{ width: auto; margin: 0 auto;}
+.js #slideshow div{display: none;} /*prevent flash of unstyled content - note invisible class added to HTML tag*/
+#slideshow div.first{ display: block } /*prevent flash of unstyled content*/
+/* overlay */
+
+.cycle-overlay { 
+    font-family: tahoma, arial;
+    position: absolute; bottom: 0; width: 100%; height:100%; /*z-index: 600;*/
+    background: black; color: white; padding: 15px; opacity: .5;
+}
+
+.cycle-pager { position: static; margin-top: 5px }
+
+#social{ /*position:relative; float: left;*/ }
+#social{position: absolute; float: left;top: 0; width: 50%; height: 20px; margin: 20px auto 0 auto;}
+.margin-right22 {margin-right: 22px}
+#home{position:relative;  float:right}
+#controls{ clear:both; width:100%; height:40px; background-color:#fff; text-align:center}
+#prev{float:left}
+#prev img{height:40px}
+#thumbs{clear: both; height:40px; width:40px; margin:0 auto; display: inline-block}
+#thumbs img{margin-top:20px}
+#next{float:right}
+#next img{height:40px}
+
+#galleryHeader{height:35px; background-color:#fff}
+
+#indexPage{width: 100%; height: auto; margin-top:20px;background: #fff; /*border-top:solid 1px #999;*/ border-bottom:solid 1px #999}
+#indexHeader{height:35px; border-bottom:solid 1px #999; background-color:#fff}
+#indexTitle{ position:relative; float: left; }
+#indexThumbs{ clear:both; position:relative; margin:10px 0 10px 0;}
+#indexThumbs img { margin:0; padding: 0px 5px 0 0}
+#indexFooter{padding-top:10px; height: 25px; margin-bottom:30px;}
+
+/* Forms */
+#containerForm{ float:right}
+#formHead{margin: 20px 0}
+#formContact { position:relative;text-align:center; width:420px}
+#formResponse {font-family: inherit; font-size: 100% ; color: inherit; text-align: center; line-height: 25px; margin: 180px 60px 0 0; width: 98%; height: 100px}
+.f1 {font-family: inherit; font-size: 85%; color: inherit; padding-top:3px; text-align:left; vertical-align: bottom; line-height:25px; width:100%} /*window titles*/
+.f2 {font-family: inherit; font-size: 115%; color: #000; line-height:20px; border:1px solid #ccc; width:97%; height: 20px; padding-left:10px} /*window*/
+.f3 {font-family: inherit; font-size: 115%; color: inherit; vertical-align: middle; line-height:30px; border:1px solid #ccc; background-color:#fff; width:100%; height: 30px;} /*send*/
+.f4 {font-family: inherit; font-size: 100%; color: #777; text-align:left; padding-top:3px} /*highlighted text*/
+.f5 {font-family: inherit; font-size: 115%; color: #000; line-height:20px; border:1px solid #ccc; width:97%; height: 80px; padding-left:10px} /*window message*/
+input {-webkit-appearance: none; -webkit-border-radius:0; border-radius:0}/*override Safari styling*/
+
+/* Pages */
+#containerText{ float:right}
+#aboutText{ position:relative; text-align: justify; width:430px; margin:80px 5px 0 0}
+#printText{ position:relative; text-align: justify; width:430px; margin:30px 5px 0 0}
+
+/*LazyLoader*/
+.lazy {display: none;}
+.red{ color:#f00}
+
+/*Pricelist*/
+#priceList{ width:90%; border:0; margin:0 auto 15px auto; font: 90%/1.4  Helvetica, Arial Verdana, sans-serif;}
+#priceHead{ border-bottom:1px solid #666}
+.priceCol1{width:30%; background-color: #F1F1F1; text-align: left; padding-left:10px}
+.priceCol2{width:40%; background-color: #F1F1F1; text-align: center}
+.priceCol3{width:30%; background-color: #F1F1F1; text-align: right; padding-right:10px}
+td { width:30%; padding-right:0px}
+
+/*Print Output*/
+#print{display:none; width: 910px; text-align:justify; margin-top:50px}
+
+@media print{
+	#print{display: block}
+	#social{display: none}	
+	}

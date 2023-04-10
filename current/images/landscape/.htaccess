@@ -1,0 +1,3 @@
+#prevent directory index
+Options -Indexes
+DirectoryIndex gallery.php contents.php 

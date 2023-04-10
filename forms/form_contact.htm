@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="http://20pictures.com/graphics/favicon20.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="viewport" content="width=device-width, initial-scale=1">
+<title>20pictures | Contact</title>
+<link rel="stylesheet" media="screen and (max-width: 700px)" href="css/20pictures_form_contact_narrow.css">
+<link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="css/20pictures_form_contact_medium.css">
+<link rel="stylesheet" media="screen and (min-width: 901px)" href="css/20pictures_form_contact_wide.css">
+
+<script type="text/javascript" src="js/20pictures.js"></script>
+<script type="text/javascript" src="../2013/includes/jquery.min.js"></script>
+<script type="text/javascript" src="js/validate.min.js"></script>
+ 
+</head>
+
+<body>
+<div id="body_wrap">
+  <div id="header" class="header">contact</div>
+  <div id="tel" class="tel_1">call <a href="tel:447905311408">07905 311 408</a> or: </div>
+  <div id="tel" class="tel_2">call <a href="#">07905 311 408</a> or: </div>
+  <div id="main" class="main">
+    <form action="http://www.20pictures.com/forms/formmail_20pictures.php" method="POST" name="form1"  class="f1">
+      <input type="hidden" name="recipients" value="webmanager">
+      <input type="hidden" name="realname" value="">
+      <input type="hidden" name="mail_options" value="Exclude=realname,HTMLTemplate=form_contact_email.php,KeepLines">
+      <input type="hidden" name="derive_fields" value="ip=REMOTE_ADDR,referrer=HTTP_REFERER,">
+      <input type=hidden name="subject" value="Website Enquiry">
+      <input type=hidden name="good_url" value="http://www.20pictures.com/forms/form_contact_response.htm">     
+      <div>name*</div>
+      <div align="left"><input type="text" name="name" maxlength="60" class="f2" id="name" required='required'></div>
+      <div>email*</div>
+      <div align="left"><input type="text" name="email" maxlength="60" class="f2" id="email" required='required'></div>
+      <div>telephone</div>
+      <div align="left"><input type="text" name="telephone" maxlength="60" class="f2" id="telephone"></div>
+      <div>message*</div>
+      <div><textarea class="f5" name="message" cols="45" rows="5" wrap="soft" id="message" required='required'></textarea></div><br>
+      <div class="error_box"></div>
+      <div id="button"> <input type="submit" name="submit" class="f3" value="Send"></div>
+      <div class="f4">*information required</div>
+    </form>
+  </div>
+</div>
+
+<script language="JavaScript" type="text/JavaScript">
+ <!--//hide script
+var validator = new FormValidator('form1', [{
+    name: 'name',
+    display: 'Name',    
+    rules: 'required'
+}, {
+    name: 'email',
+	display: 'Email',
+    rules: 'required|valid_email'
+}, {
+    name: 'message',
+    display: 'Message',
+    rules: 'required'
+	
+	//CALLBACK to popup
+}], function(errors, event) {
+    if (errors.length > 0) {
+        var errorString = '';
+        
+        for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+            errorString += errors[i].message + '\n';
+        }
+		alert(errorString);
+    }       
+
+});
+
+ // --->
+ </script>
+</body>
+</html>

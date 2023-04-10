@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html{ overflow:scroll}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #DADADA;
+}
+body {
+	background-color: #000;
+	margin-top:30px; overflow:auto
+}
+#content{position:relative; margin-top:20px}
+#header{ position:relative; height:40px; width:95% ; border-bottom: #DADADA solid 1px; margin: 0 auto 20px  auto; line-height:30px}
+#head_left{ float:left}
+#head_right{ float:right}
+#wrap_gallery { position:relative; width:95% ; margin: 0 auto 20px auto}
+#wrap_gallery img {margin:10px 10px 2px 10px; border: #202020 solid 1px}
+#thumb{ position:relative; float:left; height:210px; text-align:center;}
+#thumb2{ position:relative; float:left; height:160px; text-align:center;}
+#title{font-family:Verdana, Geneva, sans-serif; font-size:10px;}
+ul {list-style-type:none;margin: 0px; padding: 0px; /*reset*/ text-align:left}
+li{display:inline; margin:0 5px 15px 5px; /*border: #f00 solid 1px*/}
+
+a:link { color:#F00; text-decoration:none}
+a:visited {color:#F00; text-decoration:none}
+a:hover {color:#FFF; text-decoration:none}
+li img:hover { opacity: 0.8}
+a:active {}
+
+#delete { width:150px; color:#FFF; background-color:#000; margin:10px auto 3px auto; border:#202020 solid 1px;font-family:Verdana, Geneva, sans-serif; font-size:10px; }
+#delete a:link,#delete a:visited { color:#FFF; text-decoration:none}
+#delete a:hover,#delete a:active {color:#F00; text-decoration:none}

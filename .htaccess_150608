@@ -1,0 +1,50 @@
+#prevent directory index
+Options -Indexes
+DirectoryIndex index.php index.htm
+
+RewriteEngine On
+#redirect www to no-www
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#RewriteEngine On
+#RewriteCond %{QUERY_STRING} "ref=" [NC]
+#RewriteRule (.*)  /$1? [R=302,L] #this removes query string but does not pass data
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /gallery\.php\?ref=([^\&\ ]+)
+#RewriteRule ^/?gallery/(.*?)/?$ /gallery.php?ref=$1 [L]
+#RewriteRule ^/?gallery\.php$ /gallery/%1? [L,R=302]
+#RewriteRule ^/gallery/(.+)$ /gallery.php/$1
+#http://johnwalton.photography/2015/images/landscape/gallery/2014072610493
+
+#RewriteEngine On
+#RewriteRule ^([a-zA-Z0-9_-]+)$ gallery.php?ref=$1
+#RewriteRule ^([a-zA-Z0-9_-]+)/$ gallery.php?ref=$1
+#http://johnwalton.photography/2015/images/landscape/2014072610493
+
+#302 redirect Short URL 
+#Pricelist:
+#RewriteRule ^gallery(.*) http://johnwalton.photography/2015/images/landscape/gallery.php [R=302,L]
+
+#RewriteEngine On
+#RewriteRule ([a-zA-Z0-9_]+)\.htm$ gallery.php?ref=$1 [L]
+#RewriteRule ^([A-Za-z0-9-]+)/?$ gallery.php?ref=$1 [L]  # domain.com/category-name/ to domain.com/categories.php?name=category-name
+#RewriteRule ^gallery.php#([A-Za-z0-9-]+)?$ gallery.php?ref=$1 [L]  # domain.com/category-name/ to domain.com/categories.php?name=category-name
+#RewriteRule ^/gallery.php /gallery.php? #Delete the query string entirely.
+
+#RewriteRule ([^/\.]+)/?.html$ gallery.php?ref=$1 [L]
+#RewriteRule gallery.php#([^/\.]+)/?$ gallery.php?ref=$1 [L]
+#RewriteRule gallery.php?ref=$1$ gallery.php [L]
+#RewriteRule gallery.php$ gallery.php?ref=$1 [L]
+
+#RewriteCond %{QUERY_STRING} !="" #if there is a query string
+#RewriteCond %{QUERY_STRING} !^p=.* #wordpress users: allow post tempalinks
+#RewriteCond %{REQUEST_URI} !^/wp-admin.* #wordpress users: don't break admin
+#RewriteRule ^(.*)$ /$1? [L] #remove query string
+
+#RewriteCond %{QUERY_STRING} .
+#RewriteRule ^$ /? [R,L]#remove query string
