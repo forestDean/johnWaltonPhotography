@@ -1,51 +1,36 @@
 <?php
-
-// Change the values based on your project's needs
-$host = 'localhost';
-$port = 8000;
-
-// Start the local PHP server
-exec("php -S {$host}:{$port} -t .", $output, $exitCode);
-
-// Check if the server started successfully
-if ($exitCode === 0) {
-    echo "Local server started at http://{$host}:{$port}\n";
-
-    // Perform any necessary build actions here
-// Define the PHP pages you want to render as HTML
-$pages = [
-    'current/about.php',
-    'current/contact.php',
-    'current/index.php',
-    'current/print.php',
-];
-
-// Set the base URL of your local server
-$baseUrl = 'http://localhost';
-
-// Loop through each page and render it as HTML
-foreach ($pages as $page) {
-    // Construct the local URL
-    $url = $baseUrl . '/' . $page;
-
-    // Get the contents of the PHP page locally
-    $file = file_get_contents($url);
-
-    // Generate the output filename based on the page path
-    $outputFilename = basename($page, '.php') . '.html';
-
-    // Save the contents to the output file
-    file_put_contents($outputFilename, $file);
+// Disable PHP output buffering
+while (ob_get_level()) {
+    ob_end_flush();
 }
 
-echo 'PHP to HTML build completed successfully.';
+// Set content type to HTML
+header('Content-Type: text/html');
 
-    // Stop the local PHP server
-    exec("kill $(lsof -t -i:{$port})");
-    echo "Local server stopped.\n";
-} else {
-    echo "Failed to start the local server.\n";
-    exit(1);
+// Get the requested path
+$path = $_SERVER['REQUEST_URI'];
+
+// Serve PHP files as flat HTML
+if (preg_match('/\.php$/', $path)) {
+    // Remove the PHP file extension
+    $path = preg_replace('/\.php$/', '', $path);
+
+    // Check if the file exists in the current directory
+    $currentPath = __DIR__ . '/current/' . $path . '.php';
+    if (is_file($currentPath)) {
+        // Render the PHP file in the current directory as flat HTML
+        include_once($currentPath);
+        exit();
+    }
 }
 
+// Serve static files
+$path = __DIR__ . $path;
+if (is_file($path)) {
+    readfile($path);
+    exit();
+}
 
+// Return a 404 error if the file doesn't exist
+http_response_code(404);
+echo '<h1>404 Not Found</h1>';
