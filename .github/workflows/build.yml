@@ -22,10 +22,12 @@ jobs:
       - name: Build PHP files
         run: |
           php build.php
-      - name: Deploy to Cloudflare Pages
+      # - name: Deploy to Cloudflare Pages
         # uses: cloudflare/pages-action@3.10.0
         # uses: cloudflare/pages-action@1.5.0
-        uses: cloudflare/pages-action
+      - name: Cloudflare Pages GitHub Action
+          uses: cloudflare/pages-action@v1.5.0
+
 
         with:
           build_command: ''
