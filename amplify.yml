@@ -10,7 +10,7 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - vendor/**/*
+      # - vendor/**/*
   build:
     commands:
       - php --version
