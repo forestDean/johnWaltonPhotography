@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Your Preview Images"
-AuthUserFile "/home4/bsensual/.htpasswds/public_html/johnwalton.photography/clients/20170605-zoya-jorden-garden/passwd"
-require valid-user
