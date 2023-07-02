@@ -9,8 +9,7 @@ frontend:
     files:
       - '**/*'
   cache:
-    paths:
-
+    paths: []
   build:
     commands:
       - php --version
