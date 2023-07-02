@@ -1,0 +1,23 @@
+#Enable Full SSL on CloudFlare -johnwalton.photography
+RewriteEngine On
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{SERVER_PORT} 80
+
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}
+RewriteRule ^$ /current/ [R=301,L] 
+#note this is a 301 Permanent Redirect best for SO
+
+#prevent directory index
+Options -Indexes
+DirectoryIndex index.php index.htm 
+
+#redirect Files Not Found to custom 403/404
+ErrorDocument 403 https://johnwalton.photography 
+ErrorDocument 404 https://johnwalton.photography
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74___lsphp .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
