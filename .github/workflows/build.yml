@@ -1,0 +1,29 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+      - name: Install dependencies
+        run: |
+          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          php composer-setup.php --install-dir=bin --filename=composer
+          php -r "unlink('composer-setup.php');"
+          php bin/composer install --no-dev --prefer-dist
+      - name: Build PHP files
+        run: |
+          php build.php
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@3.10.0
+        with:
+          build_command: ''
+          publish_dir: ./output
