@@ -23,7 +23,8 @@ jobs:
         run: |
           php build.php
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@3.10.0
+        # uses: cloudflare/pages-action@3.10.0
+        uses: cloudflare/pages-action@1.5
         with:
           build_command: ''
           publish_dir: ./output
