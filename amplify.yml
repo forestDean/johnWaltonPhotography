@@ -4,13 +4,13 @@ frontend:
     preBuild:
       commands:
         - php --version
+    build:
+      commands:
+        - php build.php
   artifacts:
     baseDirectory: /
     files:
       - '**/*'
   cache:
-    paths: []
-  build:
-    commands:
-      - php --version
-      - php build.php
+    paths:
+      - vendor/**/*

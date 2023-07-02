@@ -1,34 +1,51 @@
 <?php
 
-// Set the output directory where the static HTML files will be saved
-$outputDirectory = 'static';
+// Change the values based on your project's needs
+$host = 'localhost';
+$port = 8000;
 
-// Define the pages you want to render as HTML
+// Start the local PHP server
+exec("php -S {$host}:{$port} -t .", $output, $exitCode);
+
+// Check if the server started successfully
+if ($exitCode === 0) {
+    echo "Local server started at http://{$host}:{$port}\n";
+
+    // Perform any necessary build actions here
+// Define the PHP pages you want to render as HTML
 $pages = [
-    './current/index.php',
-    './current/about.php',
-    './current/prints.php',
-    './current/contact.php',
-    // Add more page filenames as needed
+    'current/about.php',
+    'current/contact.php',
+    'current/index.php',
+    'current/print.php',
 ];
+
+// Set the base URL of your local server
+$baseUrl = 'http://localhost';
 
 // Loop through each page and render it as HTML
 foreach ($pages as $page) {
-    // Set the output filename by replacing the .php extension with .html
-    $outputFilename = str_replace('.php', '.html', $page);
+    // Construct the local URL
+    $url = $baseUrl . '/' . $page;
 
-    // Capture the rendered HTML output
-    ob_start();
-    include $page;
-    $html = ob_get_clean();
+    // Get the contents of the PHP page locally
+    $file = file_get_contents($url);
 
-    // Create the output directory if it doesn't exist
-    if (!is_dir($outputDirectory)) {
-        mkdir($outputDirectory, 0755, true);
-    }
+    // Generate the output filename based on the page path
+    $outputFilename = basename($page, '.php') . '.html';
 
-    // Save the rendered HTML to the output file
-    file_put_contents($outputDirectory . '/' . $outputFilename, $html);
+    // Save the contents to the output file
+    file_put_contents($outputFilename, $file);
 }
 
 echo 'PHP to HTML build completed successfully.';
+
+    // Stop the local PHP server
+    exec("kill $(lsof -t -i:{$port})");
+    echo "Local server stopped.\n";
+} else {
+    echo "Failed to start the local server.\n";
+    exit(1);
+}
+
+
