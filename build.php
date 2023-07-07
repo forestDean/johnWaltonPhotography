@@ -1,36 +1,34 @@
 <?php
-// Disable PHP output buffering
-while (ob_get_level()) {
-    ob_end_flush();
-}
 
-// Set content type to HTML
-header('Content-Type: text/html');
+// Set the output directory where the static HTML files will be saved
+$outputDirectory = 'static';
 
-// Get the requested path
-$path = $_SERVER['REQUEST_URI'];
+// Define the pages you want to render as HTML
+$pages = [
+    'index.php',
+    './pages/about.php',
+    './pages/prints.php',
+    './pages/contact.php',
+    // Add more page filenames as needed
+];
 
-// Serve PHP files as flat HTML
-if (preg_match('/\.php$/', $path)) {
-    // Remove the PHP file extension
-    $path = preg_replace('/\.php$/', '', $path);
+// Loop through each page and render it as HTML
+foreach ($pages as $page) {
+    // Set the output filename by replacing the .php extension with .html
+    $outputFilename = str_replace('.php', '.html', $page);
 
-    // Check if the file exists in the current directory
-    $currentPath = __DIR__ . '/current/' . $path . '.php';
-    if (is_file($currentPath)) {
-        // Render the PHP file in the current directory as flat HTML
-        include_once($currentPath);
-        exit();
+    // Capture the rendered HTML output
+    ob_start();
+    include $page;
+    $html = ob_get_clean();
+
+    // Create the output directory if it doesn't exist
+    if (!is_dir($outputDirectory)) {
+        mkdir($outputDirectory, 0755, true);
     }
+
+    // Save the rendered HTML to the output file
+    file_put_contents($outputDirectory . '/' . $outputFilename, $html);
 }
 
-// Serve static files
-$path = __DIR__ . $path;
-if (is_file($path)) {
-    readfile($path);
-    exit();
-}
-
-// Return a 404 error if the file doesn't exist
-http_response_code(404);
-echo '<h1>404 Not Found</h1>';
+echo 'PHP to HTML build completed successfully.';
