@@ -5,10 +5,12 @@
 	$folder = 'previews'; 
 	//path to directory to scan
 	// $directory = ('images/square/'.$folder.'/');            
-	$directory = ('./square/'.$folder.'/');            
+	$directory = ('./square/'.$folder.'/');
+	echo $directory;          
 	//get all image files with a .jpg extension.
 	$images = glob($directory . "*.{jpg,JPG}",GLOB_BRACE);
 	$count = count($images);
+	echo $count;
 	//pick $n random *values* (not keys) from an array $array:
 	$n = $count;
 	$flip = array_flip($images);
