@@ -32,7 +32,7 @@ jobs:
 
       - name: Modify php.ini
         run: |
-          echo "include_path='.:$GITHUB_WORKSPACE/assets/includes:/usr/share/php'" >> $GITHUB_WORKSPACE/php.ini
+          echo "include_path='.:/usr/share/php:$GITHUB_WORKSPACE/assets/includes'" >> $GITHUB_WORKSPACE/php.ini
 
       - name: Install dependencies
         run: |
