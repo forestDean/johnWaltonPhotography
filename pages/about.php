@@ -10,7 +10,7 @@
 <script type="text/javascript" src="jquery/jquery.cycle2.min.js"></script>
 <script type="text/javascript" src="jquery/jquery.cycle2.swipe.min.js"></script>
 
-<?php require_once ('includes/slideshowAbout.htm')?>
+<?php require_once ('./assets/includes/slideshowAbout.html')?>
 
 </head>
 

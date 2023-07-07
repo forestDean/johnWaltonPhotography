@@ -4,7 +4,8 @@
 	// first image
 	$folder = 'previews'; 
 	//path to directory to scan
-	$directory = ('images/square/'.$folder.'/');            
+	// $directory = ('images/square/'.$folder.'/');            
+	$directory = ('./square/'.$folder.'/');            
 	//get all image files with a .jpg extension.
 	$images = glob($directory . "*.{jpg,JPG}",GLOB_BRACE);
 	$count = count($images);
