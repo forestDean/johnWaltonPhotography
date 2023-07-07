@@ -1,35 +1,41 @@
 name: Build and Deploy
+
 on:
   push:
     branches:
       - main
   pull_request:
     types:
-      - closed   
+      - closed
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Set up PHP
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: '7.4'
+
       - name: Install dependencies
         run: |
-          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-          php composer-setup.php --install-dir=bin --filename=composer
-          php -r "unlink('composer-setup.php');"
-          php bin/composer install --no-dev --prefer-dist
-      - name: Build PHP files
+          composer install
+          npm install
+
+      - name: Build HTML files
         run: |
-          php build.php
-      # - name: Deploy to Cloudflare Pages
-        # uses: cloudflare/pages-action@3.10.0
-        # uses: cloudflare/pages-action@1.5.0
-      - name: Cloudflare Pages GitHub Action
-        uses: cloudflare/pages-action@v1.5.0
+          php convert.php # Replace with your PHP to HTML conversion script
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@1.5.0
         with:
-          build_command: ''
-          publish_dir: ./output
+          token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
