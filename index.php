@@ -31,7 +31,7 @@
     <div id="galleryHome">	
     	<div id="squareOverlay"></div>
     	<div id="slideshowHome" class="slideShowHome">             
-		<!-- <?php require_once ('./assets/images/squareSlides.php')?> -->
+		<?php require_once ('./assets/images/squareSlides.php')?>
         
         </div><!--end of #slideshowHome-->
     </div><!--end of #galleryHome-->    
