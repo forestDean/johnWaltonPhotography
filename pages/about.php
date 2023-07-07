@@ -19,7 +19,7 @@
 <div class="container">
   <div id="main">
     <div id="galleryHeader">
-    <?php require_once ('../assets/includes/social.php')?>
+    <!-- <?php require_once ('../assets/includes/social.php')?> -->
     
     <div id="home"><a href=index.php><img src="../graphics/jw_button_grey30.png" width="25" height="25"></a></div>      
     </div><!--end of #galleryHeader-->
