@@ -14,7 +14,7 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140415/jquery.cycle2.swipe.min.js"></script>-->
 
-<?php require_once ('./assets/includes/slideshowHome.htm')?>
+<?php require_once ('./assets/includes/slideshowHome.html')?>
 
 </head>
 
