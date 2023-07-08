@@ -59,16 +59,6 @@ jobs:
           git remote add origin_with_token "https://${{ secrets.GITHUB_TOKEN }}@github.com/forestDean/johnwalton.photography.php.git"
           git push origin_with_token main
           
-          - name: GIT commit and push all changed files
-          env: 
-            CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
-            CI_COMMIT_AUTHOR: Continuous Integration
-          run: |
-            git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-            git config --global user.email "forestdean@users.noreply.github.com"
-            git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-            git push
-    
     
 #       - name: Cloudflare Pages GitHub Action
 #         uses: cloudflare/pages-action@v1.5.0
