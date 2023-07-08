@@ -5,9 +5,10 @@ $outputDirectory = 'static/';
 echo $outputDirectory;
 
 // Create the output directory if it doesn't exist // Permission Denied !!
-// if (!is_dir($outputDirectory)) {
-//     mkdir($outputDirectory, 0755, true);
-// }}
+if (!is_dir($outputDirectory)) {
+    // mkdir($outputDirectory, 0755, true);
+    echo 'DIRECTORY NOT FOUND';
+}}
 
 // Define the pages you want to render as HTML
 $pages = [
@@ -41,4 +42,5 @@ foreach ($pages as $page) {
     // file_put_contents($outputFile, $htmlContent);
 }
 
-echo '<br>PHP to HTML build completed successfully.  \r\n';
+echo `
+PHP to HTML build completed successfully.`;
