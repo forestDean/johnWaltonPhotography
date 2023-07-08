@@ -1,0 +1,26 @@
+# The name of the workflow, it can be anything you wish
+name: "Branch Deploy"
+
+# The workflow to execute on is comments that are newly created
+on:
+  issue_comment:
+    types: [created]
+
+# Permissions needed for reacting and adding comments for IssueOps commands
+permissions:
+  pull-requests: write
+  deployments: write
+  contents: write
+  
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout your projects repository
+      - uses: actions/checkout@3.0.2  
+ 
+ # Execute IssueOps branch deployment logic, hooray!
+    - uses: github/branch-deploy@vX.X.X
+      id: branch-deploy
+      with:
+        trigger: ".deploy"
