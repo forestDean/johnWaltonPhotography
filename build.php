@@ -33,13 +33,22 @@ foreach ($pages as $page) {
 
     // Set the output filename by replacing the .php extension with .html
     $outputFilename = str_replace('.php', '.html', $page);
-    echo ' ~ ' . $outputFilename . '\n';
+    echo ' ~ ' . $outputFilename;
     
     // // Replace file links in the HTML content
     // $htmlContent = str_replace('../assets/', '/assets/', $htmlContent);
     
-    // Set file permissions
-    chmod($outputFilename, 0644); 
+    // // Set file permissions
+    // chmod($outputFilename, 0644);
+
+    // Get the file permissions
+    $permissions = fileperms($outputFilename);
+    
+    // Convert the numeric permissions to a string representation
+    $permissionsString = substr(sprintf('%o', $permissions), -4);
+    
+    // Output the file permissions
+    echo "File Permissions: $permissionsString";
     
     // Save the rendered HTML to the output file
     file_put_contents($outputDirectory . $outputFilename, $html);
