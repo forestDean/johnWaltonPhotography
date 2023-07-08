@@ -1,7 +1,7 @@
 <?php
 
 // Set the output directory where the static HTML files will be saved
-$outputDirectory = '/static/';
+$outputDirectory = 'static/';
 echo $outputDirectory;
 
 // Create the output directory if it doesn't exist // Permission Denied !!
@@ -41,4 +41,4 @@ foreach ($pages as $page) {
     // file_put_contents($outputFile, $htmlContent);
 }
 
-echo '\nPHP to HTML build completed successfully.';
+echo '<br>PHP to HTML build completed successfully.  \r\n';
