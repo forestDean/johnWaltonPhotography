@@ -17,3 +17,5 @@ A legacy portfolio website for personal images by John Walton, built with PHP an
 https://johnwalton.photography/
 
 - PHP server may terminate August 2023
+
+deploy
