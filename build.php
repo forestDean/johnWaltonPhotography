@@ -43,4 +43,5 @@ foreach ($pages as $page) {
 }
 
 echo scandir($outputDirectory);
+echo glob($outputDirectory . '*.txt');
 echo ' - PHP to HTML build completed successfully.';
