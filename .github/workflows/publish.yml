@@ -22,7 +22,7 @@ jobs:
         
       - name: Set up Git
         run: |
-          git config --global user.name "forestDeam"
+          git config --global user.name "forestDean"
           git config --global user.email "email@johnwalton.uk"
 
 # Run a build step here if your project requires
