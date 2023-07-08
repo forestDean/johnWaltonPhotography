@@ -51,7 +51,10 @@ jobs:
       - name: Build HTML files
         run: |
           php build.php # Replace with your PHP to HTML conversion script
-          
+       
+       - name: Git Auto Commit
+         uses: stefanzweifel/git-auto-commit-action@v4.16.0
+
       - name: Stage and Commit HTML Files
         run: |
           git add .
