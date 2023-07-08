@@ -27,11 +27,11 @@
     <div id="galleryHome">
     	<div id="squareOverlay"></div>
     	<div id="slideshowHome" class="slideShowHome">
-		<?php require_once ('images/squareSlides.php')?>
+		<?php require_once (__DIR__ . '/../assets/images/squareSlides.php')?>
         </div><!--end of #slideshowHome-->
     </div><!--end of #galleryHome-->
     
-<?php require_once (__DIR__ . '/../assets/includesprintText.html')?>
+<?php require_once (__DIR__ . '/../assets/includes/printText.html')?>
    
     <div id="controls">
         <div id="prev"><a href=#><img src="../graphics/prevNextButton30.png" width="35" height="35"></a></div>
