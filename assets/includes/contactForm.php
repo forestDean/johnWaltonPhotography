@@ -1,10 +1,10 @@
 <div id="containerForm">
-<!-- removed POST ...update FORM -->
+<!-- <?php if ($_GET['post']==='success') { ?>
 
   <div id="formResponse">
     Thank you.<br><br> Your message has been successfully posted.
   </div>
-<?php } else { ?>    
+<?php } else { ?>     -->
       <div id="formHead">call / text<span class="f4">&nbsp; 07905 311 408</span><br>
       or send a message:</div>
       <div id="formContact">
@@ -27,5 +27,5 @@
           <div class="f4">required*</div>
         </form>
       </div>
-<?php } ?>
+<!-- <?php } ?> -->
 </div>
