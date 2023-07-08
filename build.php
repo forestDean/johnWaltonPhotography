@@ -8,7 +8,7 @@ echo $outputDirectory;
 if (!is_dir($outputDirectory)) {
     // mkdir($outputDirectory, 0755, true);
     echo 'DIRECTORY NOT FOUND';
-}}
+};
 
 // Define the pages you want to render as HTML
 $pages = [
