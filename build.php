@@ -4,10 +4,10 @@
 $outputDirectory = '/static/';
 echo $outputDirectory;
 
-// Create the output directory if it doesn't exist
-if (!is_dir($outputDirectory)) {
-    mkdir($outputDirectory, 0755, true);
-}
+// Create the output directory if it doesn't exist // Permission Denied !!
+// if (!is_dir($outputDirectory)) {
+//     mkdir($outputDirectory, 0755, true);
+// }}
 
 // Define the pages you want to render as HTML
 $pages = [
