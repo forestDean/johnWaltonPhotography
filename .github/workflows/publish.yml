@@ -1,5 +1,8 @@
 name: Convert, Build and Deploy
 
+permissions:
+  contents: true
+  
 on:
   # push:
   #   branches:
