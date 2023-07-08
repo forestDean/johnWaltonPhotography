@@ -26,18 +26,18 @@ jobs:
         with:
           php-version: '7.4'
           
-      - name: Check if php.ini exists
-        run: |
-          if [[ ! -f $GITHUB_WORKSPACE/php.ini ]]; then
-            touch $GITHUB_WORKSPACE/php.ini
-          fi
+#       - name: Check if php.ini exists
+#         run: |
+#           if [[ ! -f $GITHUB_WORKSPACE/php.ini ]]; then
+#             touch $GITHUB_WORKSPACE/php.ini
+#           fi
           
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-          ini-values: |
-            include_path='.:/usr/share/php:/home/runner/work/johnwalton.photography.php/johnwalton.photography.php/assets/includes'
+#           ini-values: |
+#             include_path='.:/usr/share/php:/home/runner/work/johnwalton.photography.php/johnwalton.photography.php/assets/includes'
 
       - name: Build HTML files
         run: |
