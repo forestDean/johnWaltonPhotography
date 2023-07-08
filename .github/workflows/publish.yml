@@ -47,7 +47,7 @@ jobs:
         uses: cloudflare/pages-action@v1
 
         with:
-          token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 603e2ae327be3125dec61286f515646c
           projectName: johnwalton-photography-php
           directory: /
