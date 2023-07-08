@@ -39,24 +39,22 @@ jobs:
 #           ini-values: |
 #             include_path='.:/usr/share/php:/home/runner/work/johnwalton.photography.php/johnwalton.photography.php/assets/includes'
 
+      - name: Install dependencies
+        run: |
+          npm install -g npm@9.8.0
+          
       - name: Build HTML files
         run: |
           php build.php # Replace with your PHP to HTML conversion script
 
       - name: Cloudflare Pages GitHub Action
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/pages-action@v1.5.0
 
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 603e2ae327be3125dec61286f515646c
           projectName: johnwalton-photography-php
           directory: /
-          # # Optional: Enable this if you want to have GitHub Deployments triggered
-          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          # # Optional: Switch what branch you are publishing to.
-          # # By default this will be the branch which triggered this workflow
-          # branch: main
-          # # Optional: Change the working directory
-          # workingDirectory: my-site
-          # # Optional: Change the Wrangler version, allows you to point to a specific version or a tag such as `beta`
-          # wranglerVersion: '3'
+          # Enable Wrangler v3
+          wranglerVersion: '3.1.2'
+          
