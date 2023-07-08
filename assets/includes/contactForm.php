@@ -1,5 +1,5 @@
 <div id="containerForm">
-<!-- <?php if ($_GET['post']==='success') { ?> -->
+<!-- removed POST ...update FORM -->
 
   <div id="formResponse">
     Thank you.<br><br> Your message has been successfully posted.
