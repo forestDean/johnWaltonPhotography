@@ -41,15 +41,6 @@ foreach ($pages as $page) {
     // // Set file permissions
     // chmod($outputFilename, 0644);
 
-    // Get the file permissions
-    $permissions = fileperms($outputFilename);
-    
-    // Convert the numeric permissions to a string representation
-    $permissionsString = substr(sprintf('%o', $permissions), -4);
-    
-    // Output the file permissions
-    echo "File Permissions: $permissionsString";
-    
     // Save the rendered HTML to the output file
     file_put_contents($outputDirectory . $outputFilename, $html);
     // file_put_contents($outputFile, $htmlContent);
