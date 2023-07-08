@@ -48,6 +48,12 @@ foreach ($pages as $page) {
     if (!chmod($outputDirectory . $outputFilename, 0644)) {
         die('Failed to set file permissions: ' . $outputDirectory . $outputFilename);
     }
+    
+   // Check if the file exists
+    if (!file_exists($outputDirectory . $outputFilename)) {
+        die('Failed to create HTML file: ' . $outputDirectory . $outputFilename);
+    }
+    
 }
 
 // echo scandir(implode(" ", $outputDirectory));
