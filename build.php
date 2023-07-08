@@ -30,7 +30,7 @@ foreach ($pages as $page) {
 
     // Set the output filename by replacing the .php extension with .html
     $outputFilename = str_replace('.php', '.html', $page);
-    echo ' ~ ' . $outputFilename;
+    echo '\n ~ ' . $outputFilename;
     
     // // Replace file links in the HTML content
     // $htmlContent = str_replace('../assets/', '/assets/', $htmlContent);
@@ -52,4 +52,4 @@ foreach ($pages as $page) {
     
 }
 
-echo ' - PHP to HTML build completed successfully.';
+echo '\n - PHP to HTML build completed successfully.';
