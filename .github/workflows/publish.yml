@@ -58,12 +58,6 @@ jobs:
        - name: Git Auto Commit
          uses: stefanzweifel/git-auto-commit-action@v4.16.0
 
-      - name: Stage and Commit HTML Files
-        run: |
-          git add .
-          git commit -m "Committing new HTML files"
-          git remote add origin_with_token "https://${{ secrets.GITHUB_TOKEN }}@github.com/forestDean/johnwalton.photography.php.git"
-          git push origin_with_token main
           
     
 #       - name: Cloudflare Pages GitHub Action
