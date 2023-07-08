@@ -1,9 +1,6 @@
-name: Convert, Build and Deploy
+name: PHP to HTML conversion
   
 on:
-  # push:
-  #   branches:
-  #     - main
   pull_request:
     types:
       - closed
@@ -26,49 +23,24 @@ jobs:
           git config --global user.name "forestDean"
           git config --global user.email "email@johnwalton.uk"
 
-# Run a build step here if your project requires
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
           
-#       - name: Check if php.ini exists
-#         run: |
-#           if [[ ! -f $GITHUB_WORKSPACE/php.ini ]]; then
-#             touch $GITHUB_WORKSPACE/php.ini
-#           fi
-          
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-#           ini-values: |
-#             include_path='.:/usr/share/php:/home/runner/work/johnwalton.photography.php/johnwalton.photography.php/assets/includes'
-
-#       - name: Install dependencies
-#         run: |
-#           npm install -g npm@9.8.0
           
       - name: Build HTML files
         run: |
           php build.php # Replace with your PHP to HTML conversion script
        
-      - name: Commit all changed files back to the repository
+      - name: Commit HTML files back to the repository
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
-          commit_message: PHP conversion & deploy
+          commit_message: PHP to HTML conversion
           # Optional. Disable dirty check and always try to create a commit and push
-          # skip_dirty_check: true  
-    
-#       - name: Cloudflare Pages GitHub Action
-#         uses: cloudflare/pages-action@v1.5.0
-
-#         with:
-#           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-#           accountId: 603e2ae327be3125dec61286f515646c
-#           projectName: johnwalton-photography-php
-#           directory: /
-#           # Enable Wrangler v3
-#           wranglerVersion: '3.1.2'
-          
+          # skip_dirty_check: true     
