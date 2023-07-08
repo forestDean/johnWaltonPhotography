@@ -1,7 +1,7 @@
 <?php
 
 // Set the output directory where the static HTML files will be saved
-$outputDirectory = 'static/';
+$outputDirectory = $_SERVER['GITHUB_WORKSPACE'] . '/static/';
 echo $outputDirectory;
 
 // Create the output directory if it doesn't exist // Permission Denied !!
@@ -33,7 +33,8 @@ foreach ($pages as $page) {
 
     // Set the output filename by replacing the .php extension with .html
     $outputFilename = str_replace('.php', '.html', $page);
-
+    echo $outputFilename;
+    
     // // Replace file links in the HTML content
     // $htmlContent = str_replace('../assets/', '/assets/', $htmlContent);
 
@@ -42,6 +43,6 @@ foreach ($pages as $page) {
     // file_put_contents($outputFile, $htmlContent);
 }
 
-echo scandir(implode(" ", $outputDirectory));
-echo glob($outputDirectory . '*.html');
+// echo scandir(implode(" ", $outputDirectory));
+// echo glob($outputDirectory . '*.html');
 echo ' - PHP to HTML build completed successfully.';
