@@ -38,8 +38,8 @@ foreach ($pages as $page) {
     // // Replace file links in the HTML content
     // $htmlContent = str_replace('../assets/', '/assets/', $htmlContent);
     
-    // // Set file permissions
-    // chmod($outputFilename, 0644);
+    // Set file permissions
+    chmod($outputFilename, 0644);
 
     // Save the rendered HTML to the output file
     file_put_contents($outputDirectory . $outputFilename, $html);
