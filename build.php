@@ -43,7 +43,7 @@ foreach ($pages as $page) {
     // file_put_contents($outputFile, $htmlContent);
 
     // Set file permissions
-    chmod($outputFile, 0644); 
+    chmod($outputFilename, 0644); 
 }
 
 // echo scandir(implode(" ", $outputDirectory));
