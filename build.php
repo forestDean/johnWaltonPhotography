@@ -41,4 +41,4 @@ foreach ($pages as $page) {
     // file_put_contents($outputFile, $htmlContent);
 }
 
-echo 'PHP to HTML build completed successfully.';
+echo '\nPHP to HTML build completed successfully.';
