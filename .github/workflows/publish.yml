@@ -12,10 +12,11 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    
     permissions:
-      contents: read
+      contents: write
       deployments: write
-    name: Publish to Cloudflare Pages
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -52,8 +53,13 @@ jobs:
         run: |
           php build.php # Replace with your PHP to HTML conversion script
        
-
-          
+      - name: Commit all changed files back to the repository
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+        # Optional. Commit message for the created commit.
+        commit_message: PHP conversion & deploy
+        # Optional. Disable dirty check and always try to create a commit and push
+        # skip_dirty_check: true  
     
 #       - name: Cloudflare Pages GitHub Action
 #         uses: cloudflare/pages-action@v1.5.0
