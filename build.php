@@ -41,6 +41,9 @@ foreach ($pages as $page) {
     // Save the rendered HTML to the output file
     file_put_contents($outputDirectory . $outputFilename, $html);
     // file_put_contents($outputFile, $htmlContent);
+
+    // Set file permissions
+    chmod($outputFile, 0644); 
 }
 
 // echo scandir(implode(" ", $outputDirectory));
