@@ -1,7 +1,7 @@
 <?php
 
 // Set the output directory where the static HTML files will be saved
-$outputDirectory = 'static';
+$outputDirectory = '../static';
 
 // Define the pages you want to render as HTML
 $pages = [
