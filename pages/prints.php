@@ -10,7 +10,7 @@
 <script type="text/javascript" src="jquery/jquery.cycle2.min.js"></script>
 <script type="text/javascript" src="jquery/jquery.cycle2.swipe.min.js"></script>
 
-<?php require_once ('includes/slideshowHome.htm')?>
+<?php require_once (__DIR__ . '/../assets/includes/slideshowHome.htm')?>
 
 </head>
 
@@ -31,7 +31,7 @@
         </div><!--end of #slideshowHome-->
     </div><!--end of #galleryHome-->
     
-    <?php require_once ('includes/printText.htm')?>
+<?php require_once (__DIR__ . '/../assets/includesprintText.htm')?>
    
     <div id="controls">
         <div id="prev"><a href=#><img src="../graphics/prevNextButton30.png" width="35" height="35"></a></div>
@@ -41,7 +41,7 @@
   </div><!--end of #main-->
 </div><!--end of #container-->
 
-	<?php require_once ('includes/legal.php')?>
+	<?php require_once (__DIR__ . '/../assets/includes/legal.php')?>
 
 </body>
 </html>
