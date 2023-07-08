@@ -4,7 +4,7 @@
 	// first image
 	$folder = 'previews'; 
 	//path to directory to scan
-	$directory = (__DIR__ . '/images/about/'.$folder.'/');            
+	$directory = (__DIR__ . '/about/'.$folder.'/');            
 	//get all image files with a .jpg extension.
 	$images = glob($directory . "*.{jpg,JPG}",GLOB_BRACE);
 	$count = count($images);
