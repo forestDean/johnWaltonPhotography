@@ -23,16 +23,23 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-
+          
+      - name: Check if php.ini exists
+        run: |
+          if [[ ! -f $GITHUB_WORKSPACE/php.ini ]]; then
+            touch $GITHUB_WORKSPACE/php.ini
+          fi
+          
       - name: Modify php.ini
         run: |
           echo "include_path='.:/usr/share/php:$GITHUB_WORKSPACE/assets/includes'" >> $GITHUB_WORKSPACE/php.ini
+          cat $GITHUB_WORKSPACE/php.ini
 
       - name: Install dependencies
         run: |
