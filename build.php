@@ -42,5 +42,5 @@ foreach ($pages as $page) {
     // file_put_contents($outputFile, $htmlContent);
 }
 
-echo `
-PHP to HTML build completed successfully.`;
+echo scandir($outputDirectory);
+echo ' - PHP to HTML build completed successfully.';
