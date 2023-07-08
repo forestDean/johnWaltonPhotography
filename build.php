@@ -42,6 +42,6 @@ foreach ($pages as $page) {
     // file_put_contents($outputFile, $htmlContent);
 }
 
-echo scandir($outputDirectory);
+echo scandir(implode(" ", $outputDirectory));
 echo glob($outputDirectory . '*.html');
 echo ' - PHP to HTML build completed successfully.';
