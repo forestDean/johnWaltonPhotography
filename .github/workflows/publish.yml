@@ -52,12 +52,12 @@ jobs:
         run: |
           php build.php # Replace with your PHP to HTML conversion script
           
-#       - name: Stage and Commit HTML Files
-#         run: |
-#           git add .
-#           git commit -m "Committing new HTML files"
-#           git remote add origin_with_token "https://${{ secrets.GITHUB_TOKEN }}@github.com/forestDean/johnwalton.photography.php.git"
-#           git push origin_with_token main
+      - name: Stage and Commit HTML Files
+        run: |
+          git add .
+          git commit -m "Committing new HTML files"
+          git remote add origin_with_token "https://${{ secrets.GITHUB_TOKEN }}@github.com/forestDean/johnwalton.photography.php.git"
+          git push origin_with_token main
           
           - name: GIT commit and push all changed files
           env: 
