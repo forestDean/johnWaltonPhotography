@@ -4,10 +4,11 @@
 $outputDirectory = $_SERVER['GITHUB_WORKSPACE'] . '/static/';
 echo $outputDirectory;
 
-// Create the output directory if it doesn't exist // Permission Denied !!
+// Create the output directory if it doesn't exist
 if (!is_dir($outputDirectory)) {
-    // mkdir($outputDirectory, 0755, true);
-    echo 'DIRECTORY NOT FOUND';
+    if (!mkdir($outputDirectory, 0755, true) && !is_dir($outputDirectory)) {
+        die('Failed to create output directory: ' . $outputDirectory);
+    }
 }
 
 // Define the pages you want to render as HTML
@@ -39,11 +40,14 @@ foreach ($pages as $page) {
     // $htmlContent = str_replace('../assets/', '/assets/', $htmlContent);
 
     // Save the rendered HTML to the output file
-    file_put_contents($outputDirectory . $outputFilename, $html);
-    // file_put_contents($outputFile, $htmlContent);
+    if (!file_put_contents($outputDirectory . $outputFilename, $html)) {
+        die('Failed to write HTML to file: ' . $outputDirectory . $outputFilename);
+    }
 
-    // Set file permissions for the output file
-    chmod($outputDirectory . $outputFilename, 0644);
+     // Set file permissions for the output file
+    if (!chmod($outputDirectory . $outputFilename, 0644)) {
+        die('Failed to set file permissions: ' . $outputDirectory . $outputFilename);
+    }
 }
 
 // echo scandir(implode(" ", $outputDirectory));
