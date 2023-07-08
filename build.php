@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 // Set the output directory where the static HTML files will be saved
 $outputDirectory = '/static/';
 echo $outputDirectory;
@@ -10,8 +9,6 @@ if (!is_dir($outputDirectory)) {
     mkdir($outputDirectory, 0755, true);
 }
 
-=======
->>>>>>> c8f8b2e1536c154b86847ff6d1a5dd1272f45581
 // Define the pages you want to render as HTML
 $pages = [
     'index.php',
