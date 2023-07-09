@@ -15,7 +15,7 @@ A legacy portfolio website for personal images by John Walton, built with PHP an
 
 **Deployed website:**   
 https://johnwalton.photography/
-
+<!-- https://johnwalton-photography-php.pages.dev/ -->
 - PHP server may terminate August 2023
 
 deploy
