@@ -19,13 +19,14 @@ A legacy portfolio website for personal images by **John Walton**, built with PH
 https://johnwalton.photography/ 
 <!-- https://johnwalton-photography-php.pages.dev/ -->
 
-<!-- ![deployed website](./graphics/website-index-600.png) -->
-<img src="./graphics/website-index-600.png" alt="deployed website" style="border: 1px solid grey;">
+![deployed website](./graphics/website-index-600.png)
 
 ## Image Processor  
 
 [assets/images/imageprocessor](https://github.com/forestDean/johnwalton.photography.php/tree/main/assets/images/imageprocessor)
-- *add ImageProcessor video*
+
+![imageprocessor](./graphics/imageProcessor_001.gif)
+
 
 ## RoadMap
 - refactor this website as a React App
