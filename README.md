@@ -6,14 +6,34 @@
 
 
 # johnwalton.photography.php
-A legacy portfolio website for personal images by John Walton, built with PHP and jQuery.    
-<!-- Hosted on AWS Amplify. -->
+A legacy portfolio website for personal images by **John Walton**, built with PHP and jQuery.    
 
-- Images are optimised with a backend Image Processor         
-- jQuery carousels render the images to the page      
-- jQuery LazyLoaders render image previews  <br><br>    
+
+- **PHP** serves pages to the browser & manages the functionality of slideshow carousels.        
+- **jQuery** Carousels render the images to the page.     
+- **jQuery** LazyLoaders render image previews.
+- **ImageProcessor PHP** has it's own GitHub repo.
+- **Note** the Contact Form has been disabled for the demonstration site.  <br><br>    
 
 **Deployed website:**   
-https://johnwalton.photography/
+https://cc023e9a.johnwalton-photography-php.pages.dev/
 
-- PHP server may terminate August 2023
+
+- *add screenshot*
+- *add ImageProcessor video*
+
+## RoadMap
+- refactor this website as a React App
+- refactor Image Processor PHP as Node/React App
+- integrate Image Processor Node/React App with Adobe Lightroom
+- refactor Image Processor Node/React App to generate WebP images
+- refactor React App with NextJS and WebP images
+
+## Credits
+- Malsup jQuery Cycle Plugin - https://malsup.com/jquery/cycle/
+- Mika Tuupola jQuery Lazyload - https://github.com/nicolas-san/jquery_lazyload
+
+## License
+**GNU AGPLv3**
+
+Permissions of this strongest copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. When a modified version is used to provide a service over a network, the complete source code of the modified version must be made available
