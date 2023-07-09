@@ -19,7 +19,8 @@ A legacy portfolio website for personal images by **John Walton**, built with PH
 https://johnwalton.photography/ 
 <!-- https://johnwalton-photography-php.pages.dev/ -->
 
-![deployed website](./graphics/website-index-600.png)
+<!-- ![deployed website](./graphics/website-index-600.png) -->
+<img src="./graphics/website-index-600.png" alt="deployed website" style="border: 1px solid #ccc;">
 
 ## Image Processor  
 
