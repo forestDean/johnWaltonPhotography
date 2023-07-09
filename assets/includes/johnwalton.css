@@ -72,6 +72,10 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	line-height: 0px;
 }
 
+
+/* Header */
+
+
 /*============================================================================================================================================================*/
 
 
@@ -105,9 +109,13 @@ div#fullOverlay{position: absolute; width:910px; height:450px; background-image:
 
 .cycle-pager { position: static; margin-top: 5px }
 
-#social{ /*position:relative; float: left;*/ }
-#social{position: absolute; float: left;top: 0; width: 50%; height: 20px; margin: 20px auto 0 auto;}
-.margin-right22 {margin-right: 22px}
+header {
+	height: 40px;
+	background-color:#fff
+}
+
+#social{position: absolute; float: left;top: 0; width: 50%; height: 20px; margin: 22px auto 0 auto;}
+.socialIcon {margin-right: 22px}
 #home{position:relative;  float:right}
 #controls{ clear:both; width:100%; height:40px; background-color:#fff; text-align:center}
 #prev{float:left}
@@ -116,8 +124,6 @@ div#fullOverlay{position: absolute; width:910px; height:450px; background-image:
 #thumbs img{margin-top:20px}
 #next{float:right}
 #next img{height:40px}
-
-#galleryHeader{height:35px; background-color:#fff}
 
 #indexPage{width: 100%; height: auto; margin-top:20px;background: #fff; /*border-top:solid 1px #999;*/ border-bottom:solid 1px #999}
 #indexHeader{height:35px; border-bottom:solid 1px #999; background-color:#fff}
