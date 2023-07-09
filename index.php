@@ -6,13 +6,9 @@
 <link rel="shortcut icon" href="https://johnwalton.photography/graphics/favicon.ico">
 <link href="assets/includes/johnwalton.css" rel="stylesheet" type="text/css">
 
-<!--<script type="text/javascript" src="jquery/jquery.min.js"></script>
-<script type="text/javascript" src="jquery/jquery.cycle2.min.js"></script>
-<script type="text/javascript" src="jquery/jquery.cycle2.swipe.min.js"></script>-->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140415/jquery.cycle2.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140415/jquery.cycle2.swipe.min.js"></script>-->
 
 <?php require_once ('./assets/includes/slideshowHome.html')?>
 
