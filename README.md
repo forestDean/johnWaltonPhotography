@@ -11,15 +11,17 @@ A legacy portfolio website for personal images by **John Walton**, built with PH
 
 - **PHP** serves pages to the browser & manages the functionality of slideshow carousels.        
 - **jQuery Carousels** render the images to the page.     
-- **jQuery LazyLoaders** render image previews.
+- **jQuery LazyLoaders** render image thumbnails.
 - ***ImageProcessor PHP** has it's own GitHub repo.*
 - **Note:** the Contact Form has been disabled for the demonstration site.  <br><br>    
 
 **Deployed website:**   
-https://cc023e9a.johnwalton-photography-php.pages.dev/
-
+https://johnwalton.photography/ 
+<!-- https://johnwalton-photography-php.pages.dev/ -->
 
 - *add screenshot*
+
+## Image Processor
 - *add ImageProcessor video*
 
 ## RoadMap
@@ -31,7 +33,7 @@ https://cc023e9a.johnwalton-photography-php.pages.dev/
 
 ## Credits
 - Malsup jQuery Cycle Plugin - https://malsup.com/jquery/cycle/
-- Mika Tuupola jQuery Lazyload - https://github.com/nicolas-san/jquery_lazyload
+- Mika Tuupola jQuery Lazyload - https://github.com/tuupola/lazyload
 
 ## License
 **GNU AGPLv3**
