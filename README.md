@@ -20,7 +20,7 @@ https://johnwalton.photography/
 <!-- https://johnwalton-photography-php.pages.dev/ -->
 
 <!-- ![deployed website](./graphics/website-index-600.png) -->
-<img src="./graphics/website-index-600.png" alt="deployed website" style="border: 1px solid #ccc;">
+<img src="./graphics/website-index-600.png" alt="deployed website" style="border: 1px solid #cccccc;">
 
 ## Image Processor  
 
