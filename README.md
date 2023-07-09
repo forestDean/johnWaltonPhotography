@@ -12,16 +12,18 @@ A legacy portfolio website for personal images by **John Walton**, built with PH
 - **PHP** serves pages to the browser & manages the functionality of slideshow carousels.        
 - **jQuery Carousels** render the images to the page.     
 - **jQuery LazyLoaders** render image thumbnails.
-- ***ImageProcessor PHP** has it's own GitHub repo.*
-- **Note:** the Contact Form has been disabled for the demonstration site.  <br><br>    
+- **ImageProcessor PHP** resize, label and sort the images
+<!-- - **Note:** the Contact Form and Social Icons have been disabled for the demonstration site.  <br><br>     -->
 
 **Deployed website:**   
 https://johnwalton.photography/ 
 <!-- https://johnwalton-photography-php.pages.dev/ -->
 
-- *add screenshot*
+![deployed website](./graphics/website-index-600.png)
 
-## Image Processor
+## Image Processor  
+
+[assets/images/imageprocessor](https://github.com/forestDean/johnwalton.photography.php/tree/main/assets/images/imageprocessor)
 - *add ImageProcessor video*
 
 ## RoadMap
